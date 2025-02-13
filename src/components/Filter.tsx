@@ -2,9 +2,10 @@ import { InputGroup, Button } from '@blueprintjs/core'
 import { useDispatch, useSelector } from 'react-redux'
 import { setFilter, clearFilter } from '../store/filtersSlice'
 import { RootState } from '../store/store'
+import { Filters } from '../types/types'
 
 type Props = {
-  column: string
+  column: keyof Filters
   placeholder: string
 }
 
@@ -25,7 +26,7 @@ const Filter = ({ column, placeholder }: Props) => {
       placeholder={placeholder}
       value={filters[column as keyof typeof filters]}
       onChange={handleFilterChange}
-      rightElement={<Button icon="cross" minimal onClick={handleClear} />}
+      rightElement={<Button icon="cross" minimal className="no-focus" onClick={handleClear} />}
     />
   )
 }

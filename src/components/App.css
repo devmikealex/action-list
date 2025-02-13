@@ -16,3 +16,6 @@
   overflow-y: auto;
 }
 
+.no-focus:focus {
+  outline: none;
+}

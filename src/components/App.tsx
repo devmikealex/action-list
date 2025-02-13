@@ -10,15 +10,15 @@ export default function App() {
   const data = useSelector((state: RootState) => state.data)
 
   const filteredData = data.filter(
-    ({ username, action, action_created_at }) =>
+    ({ username, action }) =>
       username.toLowerCase().includes(filters.username.toLowerCase()) &&
-      action.toLowerCase().includes(filters.action.toLowerCase()) &&
-      action_created_at.toLowerCase().includes(filters.action_created_at.toLowerCase()),
+      action.toLowerCase().includes(filters.action.toLowerCase()),
   )
 
   return (
     <Card className="container">
       <h3 className="bp5-heading">User Action List</h3>
+      
       <Card className="toolbar" compact>
         <Filter column="username" placeholder="Filter by username" />
         <Filter column="action" placeholder="Filter by action" />

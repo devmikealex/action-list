@@ -4,4 +4,4 @@ export type UserActions = {
   action_created_at: string
 }
 
-export type Filters = UserActions
+export type Filters = Omit<UserActions, 'action_created_at'>
